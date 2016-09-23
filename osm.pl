@@ -9,18 +9,25 @@ use Geo::Parse::OSM;
 use Data::Dumper;
 
 my $path="B:\\Research\\RAWDATA\\OSM";
-my @states=("rhode-island");
+my @states=("alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware", "district-of-columbia",
+            "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "lousiana", "maine", "maryland",
+            "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana", "nebraska", "nevada", "new-hampshire",
+            "new-jersey", "new-york", "north-carolina", "north-dakota", "ohio", "oklahomoa", "oregon", "pennsylvania", "rhode-island",
+            "south-carolina", "south-dakota", "tennessee", "texas", "utah", "vermont", "virginia", "washington", "west-virginia",
+            "wisconsin", "wyoming");
 
 foreach my $state (@states) {
+  
+  print "Parsing $state\n";
 
   open (OUTFILE1, ">$path\\Parsed\\$state-latest_DUMPED.txt") or die "Can't open subjects file: $state-latest_DUMPED.txt";
-  
+
   open (OUTFILE2, ">$path\\Parsed\\$state-latest_PARSED.txt") or die "Can't open subjects file: $state-latest_PARSED.txt";
   print OUTFILE2 "type	id	visible	timestamp	lat	lon	user	changeset	uid	";
   print OUTFILE2 "amenity	source	website	phone	openinghours	cuisine	name	wikipedia	internetaccess	";
   print OUTFILE2 "addrcity	addrpostcode	addrstreet	addrhousenumber\n";
   
-  
+
   Geo::Parse::OSM->parse_file( "$path\\$state-latest.osm.bz2", sub{ print OUTFILE1 Dumper $_[0] } );
   
   Geo::Parse::OSM->parse_file( "$path\\$state-latest.osm.bz2",
