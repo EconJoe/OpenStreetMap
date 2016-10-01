@@ -20,7 +20,7 @@ foreach my $state (@states) {
   
   print "Parsing $state\n";
 
-  open (OUTFILE1, ">$path\\Parsed\\$state-latest_DUMPED.txt") or die "Can't open subjects file: $state-latest_DUMPED.txt";
+  open (OUTFILE1, ">$path\\Dumped\\$state-latest_DUMPED.txt") or die "Can't open subjects file: $state-latest_DUMPED.txt";
 
   open (OUTFILE2, ">$path\\Parsed\\$state-latest_PARSED.txt") or die "Can't open subjects file: $state-latest_PARSED.txt";
   print OUTFILE2 "type	id	visible	timestamp	lat	lon	user	changeset	uid	";
@@ -63,4 +63,3 @@ foreach my $state (@states) {
         } 
   );
 }
-
