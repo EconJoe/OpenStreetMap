@@ -20,12 +20,13 @@ foreach my $state (@states) {
   
   print "Parsing $state\n";
   open (OUTFILE2, ">$path\\Parsed\\ID\\$state\_ID.txt") or die "Can't open subjects file: $state\_ID.txt";
-  print OUTFILE2 "id\n";
+  print OUTFILE2 "id	type\n";
 
   Geo::Parse::OSM->parse_file( "$path\\$state-latest.osm.bz2",
         sub{
             my $id="$_[0]->{id}";
-            print OUTFILE2 "$id\n";
+            my $type="$_[0]->{type}";
+            print OUTFILE2 "$id	$type\n";
         }
   );
 }
