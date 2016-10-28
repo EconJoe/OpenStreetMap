@@ -19,7 +19,7 @@ my @states=("alabama", "alaska", "arizona", "arkansas", "california", "colorado"
 foreach my $state (@states) {
   
   print "Parsing $state\n";
-  open (OUTFILE2, ">$path\\Parsed\\ID\\$state_ID.txt") or die "Can't open subjects file: $state_ID.txt";
+  open (OUTFILE2, ">$path\\Parsed\\ID\\$state\_ID.txt") or die "Can't open subjects file: $state\_ID.txt";
   print OUTFILE2 "id\n";
 
   Geo::Parse::OSM->parse_file( "$path\\$state-latest.osm.bz2",
