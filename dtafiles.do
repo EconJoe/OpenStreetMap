@@ -5,7 +5,7 @@ local states alabama alaska arizona arkansas california colorado connecticut del
 			 massachusetts michigan minnesota mississippi missouri montana nebraska nevada new-hampshire ///
 			 new-jersey new-mexico new-york north-carolina north-dakota ohio oklahoma oregon pennsylvania ///
 			 rhode-island south-carolina south-dakota tennessee texas utah vermont virginia washington ///
-			 west-virgina wicconsin wyoming
+			 west-virginia wisconsin wyoming
 
 set more off
 foreach state in `states' {
